@@ -45,6 +45,10 @@
     margin-left: 10px;
 }
 
+input:focus{
+    outline: none;
+}
+
 .sidebar__searchContainer > .MuiSvgIcon-root {
     color: gray;
     padding: 10px;
