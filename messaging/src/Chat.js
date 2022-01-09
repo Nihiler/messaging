@@ -6,11 +6,14 @@ import DonutLargeIcon from "@material-ui/icons/DonutLarge"
 import ChatIcon from "@material-ui/icons/Chat"
 import MoreIcon from '@material-ui/icons/More';
 import { AttachFile, InsertEmoticon, MicOutlined, MoreVert, SearchOutlined } from '@material-ui/icons';
+import {useParams} from "react-router-dom";
+
 
 
 function Chat() {
     const [input, setInput] = useState("");
     const [seed, setSeed] = useState("");
+    const {roomId} = useParams ();
 
     useEffect(() => {
         setSeed(Math.floor(Math.random()*5000));        
