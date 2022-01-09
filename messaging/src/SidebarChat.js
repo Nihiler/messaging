@@ -2,8 +2,9 @@ import { Avatar } from '@material-ui/core'
 import React from 'react'
 import "./SidebarChat.css"
 import { useEffect, useState } from 'react';
+import db from './firebase';
 
-function SidebarChat({addNewChat}) {
+function SidebarChat({id, name, addNewChat}) {
     const [seed, setSeed]= useState ('');
     useEffect(() => {
         setSeed(Math.floor(Math.random()*5000));        
@@ -12,9 +13,14 @@ function SidebarChat({addNewChat}) {
 
     const createChat = () => {
 
-        const roomName = prompt ("Please enter name for chat");
+        const roomName = prompt ("Please enter name for chat room");
         if(roomName){
             //do Clever Stuff
+            db.collection('rooms').add(
+                {
+                    name: roomName,
+                }
+            )
         }
 
     } ;
@@ -25,7 +31,7 @@ function SidebarChat({addNewChat}) {
 
             <div className='sidebarChat__info'>
 
-                <h2>Room name</h2>
+                <h2>{name}</h2>
                 <p>Last message...</p>
             </div>
         </div>

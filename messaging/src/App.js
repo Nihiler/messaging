@@ -3,6 +3,9 @@ import React from "react";
 import './App.css';
 import Sidebar from "./Sidebar";
 import Chat from "./Chat";
+// import { Switch } from "@material-ui/core";
+import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
+
 
 function App() {
   return (
@@ -13,12 +16,19 @@ function App() {
 
 
        <div className="app__body">
+        <Router>
+           <Switch>
+           <Sidebar/>
+             <Route path="/rooms/:roomId">
+                 <Chat />
+             </Route>
+              <Route path="/">
+                {/* Chat */}
+             </Route>
 
-        {/* Sidebar */}
-        <Sidebar/>
 
-        {/* Chat screen */}
-        <Chat />
+          </Switch>
+        </Router>
       </div>
       </div>
 

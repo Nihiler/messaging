@@ -20,6 +20,7 @@ function Chat() {
 const sendMessage = (e) => {
     e.preventDefault();
         console.log('you typed >>>>', input);
+        setInput("");
     };
     return (
         <div className='chat'>
@@ -68,7 +69,7 @@ const sendMessage = (e) => {
             <IconButton><InsertEmoticon/></IconButton>
                 <form>
                     <input value={input} onChange={(e) => setInput(e.target.value)} placeholder="Type a message" type="text" />
-{/* hay que meter sd al final de todos los mensajes para el log de la consola */}
+
                     <button onClick={sendMessage} type='submit'>Send a message</button>
                 </form>
                 <IconButton><MicOutlined/></IconButton>
