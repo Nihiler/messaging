@@ -7,10 +7,11 @@ import Login from "./Login";
 import { useState } from "react";
 // import { Switch } from "@material-ui/core";
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import { useStateValue } from "./StateProvider";
 
 
 function App() {
-  const [user, setUser] = useState(null);
+  const [{user}, setUser] = useStateValue();
   return (
     <div className="app">
          {!user ? (
