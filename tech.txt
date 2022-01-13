@@ -7,4 +7,3 @@ React Context API <-Redux
 Google Authentication
 Deploy w/ FireBase
 
-https://www.youtube.com/watch?v=pUxrDcITyjg&linpmPL-J2q3Ga50oMQa1JdSJxYoZELwOJAXExP&index=19
